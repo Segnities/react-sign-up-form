@@ -1,0 +1,12 @@
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("./assets/img/bg-intro-desktop.png");
+  background-size: cover;
+}
+
+@media screen and (max-width: 720px) {
+  .App {
+    background-image: url("./assets/img/bg-intro-mobile.png");
+  }
+}
