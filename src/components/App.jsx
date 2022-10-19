@@ -1,18 +1,17 @@
 import React from "react";
 
-import "./App.css";
+import "./assets/css/App.css";
+import Intro from "./Intro";
 
 function App() {
   return (
     <div className="App">
-      <div className="intro">
-        <h2>Learn to code by watching others</h2>
-        <p>
-          See how experienced developers solve problems in real time. Watching
+      <Intro
+        title={"Learn to code by watching others"}
+        body={`See how experienced developers solve problems in real time. Watching
           scripted tutorials is great, but understanding how developers think us
-          invaluable.
-        </p>
-      </div>
+          invaluable.`}
+      />
       <div className="card-wrapper">
         <div className="sign-up-suggestion">
           <p>
@@ -20,14 +19,14 @@ function App() {
           </p>
         </div>
         <form className="sign-up-card" onSubmit={(e) => e.preventDefault()}>
-          <input type="text" />
-          <input type="text" />
-          <input type="email" />
-          <input type="password" />
+          <input type="text" placeholder="First name" />
+          <input type="text" placeholder="Last name" />
+          <input type="email" placeholder="Email address" />
+          <input type="password" placeholder="Password" />
           <button>Claim youre free trial</button>
           <p>
             By clicking the button, you are agreeing to out
-            <span>Terms and services</span>
+            <span> Terms and services</span>
           </p>
         </form>
       </div>
