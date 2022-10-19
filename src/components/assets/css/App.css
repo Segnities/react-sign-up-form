@@ -45,19 +45,24 @@
   border-radius: 5px;
   font-weight: 600;
   padding: 15px;
-  border: 1px solid hsl(249, 10%, 26%);
+  border: 1px solid hsl(246, 25%, 77%);
+  color: hsl(249, 10%, 26%);
 }
 
+.sign-up-card input:focus-visible {
+  outline: 1px solid hsl(249, 10%, 26%);
+}
 
 .sign-up-card button {
-  padding: 15px;
+  border-radius: 4px;
+  padding: 18px;
   cursor: pointer;
   background-color: hsl(154, 59%, 51%);
   outline: none;
   border: none;
   color: #fff;
   text-transform: uppercase;
-
+  box-shadow: -3px 5px 6px -4px rgba(0,0,0,0.67);
 }
 
 .sign-up-card p {
@@ -67,7 +72,8 @@
 }
 
 .sign-up-card p span {
-  color: red;
+  color:  hsl(0, 100%, 74%);
+  font-weight: 700;
 }
 
 @media screen and (max-width: 720px) {
