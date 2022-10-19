@@ -1,8 +1,16 @@
 .App {
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: row;
   background-image: url("./assets/img/bg-intro-desktop.png");
   background-size: cover;
+  background-color: hsl(0, 100%, 74%);
+}
+
+.intro {
+  align-self: center;
+  color: #fff;
 }
 
 @media screen and (max-width: 720px) {
