@@ -13,71 +13,17 @@
   background-color: hsl(0, 100%, 74%);
 }
 
-.card-wrapper {
-  width: 100%;
-  display: grid;
-  grid-template-rows: 1fr 10fr;
-  grid-row-gap: 20px;
-}
 
-.sign-up-suggestion {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  justify-content: center;
-  color: #fff;
-  border-radius: 8px;
-  background-color: hsl(248, 32%, 49%);
-}
 
-.sign-up-card {
-  width: 100%;
-  padding: 2.5em;
-  justify-content: space-between;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-
-}
-.sign-up-card input {
-  border-radius: 5px;
-  font-weight: 600;
-  padding: 15px;
-  border: 1px solid hsl(246, 25%, 77%);
-  color: hsl(249, 10%, 26%);
-}
-
-.sign-up-card input:focus-visible {
-  outline: 1px solid hsl(249, 10%, 26%);
-}
-
-.sign-up-card button {
-  border-radius: 4px;
-  padding: 18px;
-  cursor: pointer;
-  background-color: hsl(154, 59%, 51%);
-  outline: none;
-  border: none;
-  color: #fff;
-  text-transform: uppercase;
-  box-shadow: -3px 5px 6px -4px rgba(0,0,0,0.67);
-}
-
-.sign-up-card p {
-  align-self: center;
-  font-size: 11px;
-  color: hsl(249, 10%, 26%);
-}
-
-.sign-up-card p span {
-  color:  hsl(0, 100%, 74%);
-  font-weight: 700;
-}
-
-@media screen and (max-width: 720px) {
+@media only screen and (max-width: 720px) {
   .App {
-    background-image: url("./assets/img/bg-intro-mobile.png");
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 5vh;    
+    padding-top: 10vh;
+    background-image: url("../img/bg-intro-mobile.png");
+    grid-template-columns: 1fr;
+    row-gap: 25px;
   }
+
 }
