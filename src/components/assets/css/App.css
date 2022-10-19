@@ -13,8 +13,6 @@
   background-color: hsl(0, 100%, 74%);
 }
 
-
-
 @media only screen and (max-width: 720px) {
   .App {
     padding-left: 5vw;
