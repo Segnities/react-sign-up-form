@@ -8,20 +8,31 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 20px;
-  background-image: url('../img/bg-intro-desktop.png');
+  background-image: url("../img/bg-intro-desktop.png");
   background-size: cover;
   background-color: hsl(0, 100%, 74%);
+  transition: all 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
 @media only screen and (max-width: 720px) {
   .App {
     padding-left: 5vw;
     padding-right: 5vw;
-    padding-bottom: 5vh;    
+    padding-bottom: 5vh;
     padding-top: 10vh;
     background-image: url("../img/bg-intro-mobile.png");
     grid-template-columns: 1fr;
     row-gap: 25px;
+    transition: all 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
   }
+}
 
+@media (min-width: 721px) and (max-width: 850px) {
+  .App {
+    padding-top: 7vh;
+    padding-bottom: 8vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
 }

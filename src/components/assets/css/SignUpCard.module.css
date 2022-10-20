@@ -84,8 +84,8 @@
   padding-right: 2.5em;
 }
 
-.w-97 {
-  width: 97%;
+.w-95 {
+  width: 95%;
 }
 
 .card-item-input  {
@@ -109,9 +109,13 @@
   color: hsl(0, 100%, 74%);
 }
 
+@media screen and(min-width: 721px) and (max-width: 850px) {
+  .sign-up-suggestion p{
+    text-align: center;
+  }
+}
 
-
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 740px) {
   .card-wrapper {
     grid-template-rows: 2fr 10fr;
   }
@@ -133,5 +137,4 @@
     text-align: center;
     margin: 5px 0;
   }
-
 }

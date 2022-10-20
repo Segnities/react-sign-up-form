@@ -27,7 +27,7 @@ function SignUpCard() {
   });
   const [password, setPassword] = useState({
     value: "",
-    placeholder: "Email Address",
+    placeholder: "Password",
     message: "Password cannot be empty",
     isCorrect: true,
   });
@@ -36,7 +36,7 @@ function SignUpCard() {
     if (isEmpty(firstName.value)) {
       setFirstName({ ...firstName, isCorrect: false });
     } else {
-      setFirstName({ ...firstName, isCorrect: true });
+      setFirstName({ ...firstName, isCorrect: true, value: "" });
     }
   }
 
@@ -44,7 +44,7 @@ function SignUpCard() {
     if (isEmpty(lastName.value)) {
       setLastName({ ...lastName, isCorrect: false });
     } else {
-      setLastName({ ...lastName, isCorrect: true });
+      setLastName({ ...lastName, isCorrect: true, value: "" });
     }
   }
 
@@ -56,7 +56,12 @@ function SignUpCard() {
         placeholder: "email@example.com",
       });
     } else {
-      setEmail({ ...email, isCorrect: true, placeholder: "Email Address" });
+      setEmail({
+        ...email,
+        isCorrect: true,
+        placeholder: "Email Address",
+        value: "",
+      });
     }
   }
 
@@ -64,7 +69,7 @@ function SignUpCard() {
     if (isEmpty(password.value)) {
       setPassword({ ...password, isCorrect: false });
     } else {
-      setPassword({ ...password, isCorrect: true });
+      setPassword({ ...password, isCorrect: true, value: "" });
     }
   }
 
@@ -91,7 +96,11 @@ function SignUpCard() {
               placeholder={firstName.placeholder}
               value={firstName.value}
               onChange={(e) =>
-                setFirstName({ ...firstName, value: e.target.value })
+                setFirstName({
+                  ...firstName,
+                  value: e.target.value,
+                  isCorrect: true,
+                })
               }
               className={
                 password.isCorrect
@@ -114,7 +123,11 @@ function SignUpCard() {
               placeholder={lastName.placeholder}
               value={lastName.value}
               onChange={(e) =>
-                setLastName({ ...lastName, value: e.target.value })
+                setLastName({
+                  ...lastName,
+                  value: e.target.value,
+                  isCorrect: true,
+                })
               }
               className={
                 password.isCorrect
@@ -136,7 +149,9 @@ function SignUpCard() {
               type="email"
               placeholder={email.placeholder}
               value={email.value}
-              onChange={(e) => setEmail({ ...email, value: e.target.value })}
+              onChange={(e) =>
+                setEmail({ ...email, value: e.target.value, isCorrect: true })
+              }
               className={
                 password.isCorrect
                   ? ``
@@ -158,7 +173,11 @@ function SignUpCard() {
               placeholder={password.placeholder}
               value={password.value}
               onChange={(e) =>
-                setPassword({ ...password, value: e.target.value })
+                setPassword({
+                  ...password,
+                  value: e.target.value,
+                  isCorrect: true,
+                })
               }
               className={
                 password.isCorrect
@@ -174,7 +193,7 @@ function SignUpCard() {
           </div>
           <label>{password.isCorrect ? null : password.message}</label>
         </div>
-        <button className={styles["w-97"]}>Claim youre free trial</button>
+        <button className={styles["w-95"]}>Claim youre free trial</button>
         <p>
           By clicking the button, you are agreeing to out
           <span> Terms and services</span>
