@@ -19,7 +19,10 @@
 
 .sign-up-card {
   width: 100%;
-  padding: 2.5em;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  padding-left: 2.5em;
+  padding-right: 1em;
   justify-content: space-between;
   background-color: #fff;
   display: flex;
@@ -70,10 +73,35 @@
   font-style: italic;
   float: right;
   color: hsl(0, 100%, 74%);
+  margin-right: 2.5em;
+}
+
+.card-right-padding-correct {
+  padding-right: 2.5em;
+}
+
+.card-right-padding-incorrect {
+  padding-right: 1em;
+}
+
+.w-95 {
+  width: 95%;
 }
 
 .email-example::placeholder {
   content: 'example@example.com';
+}
+
+.card-item-input  {
+  display: flex;
+  align-items: center;
+}
+
+.card-item-input img {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  right: 3em;
 }
 
 .input-error::placeholder {
