@@ -19,7 +19,10 @@
 
 .sign-up-card {
   width: 100%;
-  padding: 2.5em;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  padding-left: 2.5em;
+  padding-right: 1em;
   justify-content: space-between;
   background-color: #fff;
   display: flex;
@@ -28,12 +31,14 @@
   box-shadow: 0px 8px 4px 0px rgb(0 0 0 / 41%);
 }
 .sign-up-card input {
+  width: 100%;
   border-radius: 5px;
   font-weight: 600;
   padding: 15px;
   border: 1px solid hsl(246, 25%, 77%);
   color: hsl(249, 10%, 26%);
 }
+
 
 .sign-up-card input:focus-visible {
   outline: 1px solid hsl(249, 10%, 26%);
@@ -62,7 +67,55 @@
   font-weight: 700;
 }
 
-@media only screen and (max-width: 720px) {
+.sign-up-card-item label{
+  margin-top: 5px;
+  font-size: 10px;
+  font-style: italic;
+  float: right;
+  color: hsl(0, 100%, 74%);
+  margin-right: 2.5em;
+}
+
+.card-right-padding-correct {
+  padding-right: 2.5em;
+}
+
+.card-right-padding-incorrect {
+  padding-right: 2.5em;
+}
+
+.w-95 {
+  width: 95%;
+}
+
+.card-item-input  {
+  display: flex;
+  align-items: center;
+}
+
+.card-item-input img, .unimage {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 3em;
+}
+
+.error-input-border {
+  border: 2px solid hsl(0, 100%, 74%) !important;
+  outline: none !important;
+}
+
+.error-placeholder::placeholder {
+  color: hsl(0, 100%, 74%);
+}
+
+@media screen and(min-width: 721px) and (max-width: 850px) {
+  .sign-up-suggestion p{
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 740px) {
   .card-wrapper {
     grid-template-rows: 2fr 10fr;
   }
@@ -84,5 +137,4 @@
     text-align: center;
     margin: 5px 0;
   }
-
 }
