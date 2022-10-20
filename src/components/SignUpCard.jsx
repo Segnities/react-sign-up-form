@@ -50,9 +50,13 @@ function SignUpCard() {
 
   function checkEmail() {
     if (isEmpty(email.value)) {
-      setEmail({ ...email, isCorrect: false });
+      setEmail({
+        ...email,
+        isCorrect: false,
+        placeholder: "email@example.com",
+      });
     } else {
-      setEmail({ ...email, isCorrect: true });
+      setEmail({ ...email, isCorrect: true, placeholder: "Email Address" });
     }
   }
 
@@ -62,18 +66,6 @@ function SignUpCard() {
     } else {
       setPassword({ ...password, isCorrect: true });
     }
-  }
-
-  function isInputFieldCorrect(iStyles, eStyles) {
-    if (
-      firstName.isCorrect === true &&
-      lastName.isCorrect === true &&
-      email.isCorrect === true &&
-      password.isCorrect === true
-    ) {
-      return iStyles;
-    }
-    return eStyles;
   }
 
   function sendSignUpForm(e) {
@@ -91,24 +83,27 @@ function SignUpCard() {
           <strong>Try it free 7 days</strong> then $20/mo.thereafter
         </p>
       </div>
-      <form
-        className={`${styles["sign-up-card"]} ${isInputFieldCorrect(
-          styles["card-right-padding-correct"],
-          styles["card-right-padding-incorrect"]
-        )}`}
-        onSubmit={sendSignUpForm}
-      >
+      <form className={`${styles["sign-up-card"]}`} onSubmit={sendSignUpForm}>
         <div className={`${styles["sign-up-card-item"]}`}>
           <div className={`${styles["card-item-input"]}`}>
             <input
               type="text"
-              placeholder="First name"
+              placeholder={firstName.placeholder}
               value={firstName.value}
               onChange={(e) =>
                 setFirstName({ ...firstName, value: e.target.value })
               }
+              className={
+                password.isCorrect
+                  ? ``
+                  : `${styles["error-input-border"]} ${styles["error-placeholder"]}`
+              }
             />
-            {firstName.isCorrect ? null : <img src={ErrorIcon} alt="" />}
+            {firstName.isCorrect ? (
+              <div className={styles["unimage"]}></div>
+            ) : (
+              <img src={ErrorIcon} alt="" />
+            )}
           </div>
           <label>{firstName.isCorrect ? null : firstName.message}</label>
         </div>
@@ -116,13 +111,22 @@ function SignUpCard() {
           <div className={`${styles["card-item-input"]}`}>
             <input
               type="text"
-              placeholder="Last name"
+              placeholder={lastName.placeholder}
               value={lastName.value}
               onChange={(e) =>
                 setLastName({ ...lastName, value: e.target.value })
               }
+              className={
+                password.isCorrect
+                  ? ``
+                  : `${styles["error-input-border"]} ${styles["error-placeholder"]}`
+              }
             />
-            {lastName.isCorrect ? null : <img src={ErrorIcon} alt="" />}
+            {lastName.isCorrect ? (
+              <div className={styles["unimage"]}></div>
+            ) : (
+              <img src={ErrorIcon} alt="" />
+            )}
           </div>
           <label>{lastName.isCorrect ? null : lastName.message}</label>
         </div>
@@ -130,11 +134,20 @@ function SignUpCard() {
           <div className={`${styles["card-item-input"]}`}>
             <input
               type="email"
-              placeholder="Email address"
+              placeholder={email.placeholder}
               value={email.value}
               onChange={(e) => setEmail({ ...email, value: e.target.value })}
+              className={
+                password.isCorrect
+                  ? ``
+                  : `${styles["error-input-border"]} ${styles["error-placeholder"]}`
+              }
             />
-            {email.isCorrect ? null : <img src={ErrorIcon} alt="" />}
+            {email.isCorrect ? (
+              <div className={styles["unimage"]}></div>
+            ) : (
+              <img src={ErrorIcon} alt="" />
+            )}
           </div>
           <label>{email.isCorrect ? null : email.message}</label>
         </div>
@@ -142,17 +155,26 @@ function SignUpCard() {
           <div className={`${styles["card-item-input"]}`}>
             <input
               type="password"
-              placeholder="Password"
+              placeholder={password.placeholder}
               value={password.value}
               onChange={(e) =>
                 setPassword({ ...password, value: e.target.value })
               }
+              className={
+                password.isCorrect
+                  ? ``
+                  : `${styles["error-input-border"]} ${styles["error-placeholder"]}`
+              }
             />
-            {password.isCorrect ? null : <img src={ErrorIcon} alt="" />}
+            {password.isCorrect ? (
+              <div className={styles["unimage"]}></div>
+            ) : (
+              <img src={ErrorIcon} alt="" />
+            )}
           </div>
           <label>{password.isCorrect ? null : password.message}</label>
         </div>
-        <button className={isInputFieldCorrect("", styles["w-95"])}>Claim youre free trial</button>
+        <button className={styles["w-97"]}>Claim youre free trial</button>
         <p>
           By clicking the button, you are agreeing to out
           <span> Terms and services</span>

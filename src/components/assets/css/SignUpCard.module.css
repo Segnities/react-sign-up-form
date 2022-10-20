@@ -81,15 +81,11 @@
 }
 
 .card-right-padding-incorrect {
-  padding-right: 1em;
+  padding-right: 2.5em;
 }
 
-.w-95 {
-  width: 95%;
-}
-
-.email-example::placeholder {
-  content: 'example@example.com';
+.w-97 {
+  width: 97%;
 }
 
 .card-item-input  {
@@ -97,16 +93,23 @@
   align-items: center;
 }
 
-.card-item-input img {
-  width: 24px;
-  height: 24px;
+.card-item-input img, .unimage {
+  width: 20px;
+  height: 20px;
   position: relative;
   right: 3em;
 }
 
-.input-error::placeholder {
-  content: url('../img/icon-error.svg');
+.error-input-border {
+  border: 2px solid hsl(0, 100%, 74%) !important;
+  outline: none !important;
 }
+
+.error-placeholder::placeholder {
+  color: hsl(0, 100%, 74%);
+}
+
+
 
 @media only screen and (max-width: 720px) {
   .card-wrapper {
